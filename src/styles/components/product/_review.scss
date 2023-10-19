@@ -1,0 +1,42 @@
+.product-review {
+  background-color: $color-gray-light;
+  width: 100%;
+  display: flex;
+  gap: 8rem;
+  padding: 6rem;
+  border-radius: 2rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  span {
+    color: #333 !important;
+  }
+
+  button {
+    @include btn-primary;
+    @include flex-center-center;
+    gap: 1rem;
+  }
+
+  &-reviews {
+    width: 50%;
+    @media (max-width: 850px) {
+      width: 100%;
+    }
+  }
+}
+
+.css-eg0mwd-MuiSlider-thumb {
+  width: 0 !important;
+}
+
+.css-187mznn-MuiSlider-root {
+  height: 1rem !important;
+}

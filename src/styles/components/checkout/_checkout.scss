@@ -1,0 +1,140 @@
+.checkout {
+  padding-top: 12.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+
+  &-link {
+    @include btn-primary;
+  }
+
+  &-body {
+    padding: 0 5rem;
+    width: 100%;
+  }
+
+  &-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    &-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &-num {
+        padding: 1rem 2.4rem;
+        border-radius: 50%;
+        background-color: $color-primary;
+      }
+    }
+
+    &-inputs {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+
+      @media (max-width: 850px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .shipping-item {
+    width: 30rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    &-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h5 {
+      text-transform: lowercase;
+      color: #777 !important;
+    }
+    &-icon {
+      font-size: 5rem !important;
+      margin-right: 1rem;
+    }
+  }
+
+  //input text
+  .css-10botns-MuiInputBase-input-MuiFilledInput-input {
+    font-size: 1.8rem !important;
+    margin-top: 5px;
+  }
+
+  //input label
+  .css-e4w4as-MuiFormLabel-root-MuiInputLabel-root {
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.3px;
+    color: #aaa;
+  }
+  .css-o943dk-MuiFormLabel-root-MuiInputLabel-root {
+    transform: translate(12px, 7px) !important;
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+  }
+  //PASS
+  .css-1gctnaj-MuiInputBase-input-MuiFilledInput-input,
+  .css-7209ej-MuiInputBase-input-MuiFilledInput-input {
+    font-size: 2rem !important;
+    margin-top: 1rem;
+  }
+
+  //remove margin from pass
+  .css-78me8v-MuiFormControl-root {
+    margin: 0 !important;
+  }
+
+  //text-field
+  .css-7209ej-MuiInputBase-input-MuiFilledInput-input {
+    padding-top: 6px;
+  }
+
+  .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+  }
+
+  //toggle group
+  .css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
+    border: 3px solid $color-gray !important;
+  }
+
+  //toggle container
+  .css-1gjgmky-MuiToggleButtonGroup-root {
+    @media (max-width: 850px) {
+      width: 100%;
+    }
+  }
+
+  .toggle-button-group {
+    @media (max-width: 850px) {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .Mui-selected {
+    border: 3px solid #333 !important;
+  }
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  overflow: hidden !important;
+}
+
+@import "countryselectort";

@@ -1,0 +1,20 @@
+.account {
+  padding-top: 12.6rem;
+  @include section-header-layout;
+
+  &-body {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 6rem;
+
+    @media (max-width: 1250px) {
+      flex-direction: column;
+      padding: 12.6rem 5rem 0 5rem;
+    }
+  }
+}
+
+@import "account_card";
+@import "perosnalinfo";
+@import "orders";

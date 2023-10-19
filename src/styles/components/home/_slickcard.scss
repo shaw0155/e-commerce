@@ -1,0 +1,66 @@
+.home-slickcard {
+  width: 95%;
+  margin: 0 auto;
+  @include primary-bg;
+  @include flex-center-center;
+
+  padding: 8rem;
+  gap: 4rem;
+  border: 1px solid #eee;
+  border-radius: 2rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  h5 {
+    color: #c07f1d;
+    background-color: #fceed3;
+    padding: 1rem;
+  }
+  img {
+    width: 45%;
+
+    @media (max-width: 850px) {
+      width: 60%;
+    }
+  }
+
+  &-btn {
+    @include btn-primary;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+
+    @media (max-width: 850px) {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.home-header {
+  padding-top: 12rem;
+
+  .slick-dots {
+    bottom: 3rem;
+  }
+
+  .slick-dots li button:before {
+    color: $color-primary;
+    opacity: 0.25;
+  }
+  .slick-dots li.slick-active button:before {
+    color: $color-primary;
+    opacity: 1 !important;
+  }
+
+  .slick-dots li button:before {
+    font-size: 1.4rem;
+  }
+}

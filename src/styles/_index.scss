@@ -1,0 +1,76 @@
+body {
+  //  overflow: hidden;
+  font-family: "Barlow", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 1000px) {
+    font-size: 55%;
+  }
+  @media (max-width: 500px) {
+    font-size: 47%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1.1px;
+}
+
+input,
+textarea {
+  font-weight: 500;
+  color: #555;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  color: #555;
+}
+
+button {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+}
+
+.container {
+  width: 120rem;
+  margin: 12.6rem auto;
+  //overflow: hidden;
+
+  @media (max-width: 1300px) {
+    margin: 6rem 1rem;
+    width: auto;
+  }
+}
+
+@import "app";
+
+//pagination
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: $color-primary !important;
+  color: white !important;
+}

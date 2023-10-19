@@ -1,0 +1,60 @@
+const orders = [
+  {
+    id: 465658,
+    name: "Apple Iphone",
+    date: "17 Oct 2023",
+    price: 46.05,
+    status: "completed",
+    color: "gray",
+  },
+  {
+    id: 459318,
+    name: "Bose QuietComfort",
+    date: "07 Oct 2023",
+    price: 78.05,
+    status: "completed",
+    color: "green",
+  },
+  {
+    id: 856419,
+    name: "Canon EOS",
+    date: "06 Oct 2023",
+    price: 57.06,
+    status: "completed",
+    color: "green",
+  },
+  {
+    id: 328946,
+    name: "HP Spectre",
+    date: "12 Oct 2023",
+    price: 98.66,
+    status: "completed",
+    color: "green",
+  },
+  {
+    id: 125368,
+    name: "Samsung Galaxy",
+    date: "19 Oct 2023",
+    price: 66.21,
+    status: "Pending",
+    color: "orange",
+  },
+  {
+    id: 951627,
+    name: "Nike Air Max",
+    date: "23 Oct 2023",
+    price: 46,
+    status: "Cancelled",
+    color: "red",
+  },
+  {
+    id: 143875,
+    name: "Adidas Ultraboost",
+    date: "29 Oct 2023",
+    price: 33.45,
+    status: "return",
+    color: "gray",
+  },
+];
+
+export default orders;

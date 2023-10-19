@@ -1,0 +1,11 @@
+.countdown{
+     @include flex-center-center;
+      gap: 1rem;
+
+      h4 {
+        padding: 5px 8px;
+        color: white;
+        background-color: $color-text-header;
+        border-radius: 1rem;
+      }
+}

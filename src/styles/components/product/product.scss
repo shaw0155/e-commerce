@@ -1,0 +1,120 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 0 5rem;
+}
+
+.product {
+  width: 120rem;
+  padding-top: 12.6rem;
+  display: flex;
+  gap: 6rem;
+
+  @media (max-width: 1250px) {
+    width: 100%;
+    gap: 3rem;
+  }
+  @media (max-width: 850px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media (max-width: 1250px) {
+    gap: 1.6rem;
+  }
+
+  &-btns {
+    @media (max-width: 1250px) {
+      display: grid;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-btn {
+    @include flex-center-center;
+    gap: 1rem;
+    @include btn-primary;
+  }
+
+  &-link {
+    @include flex-center-center;
+    gap: 1rem;
+    @include btn-secondary;
+    font-size: 1.8rem;
+  }
+
+  h4 {
+    text-transform: capitalize;
+  }
+
+  h3:nth-child(2) {
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.color-toggle-groups {
+  //color select
+  .css-ueukts-MuiButtonBase-root-MuiToggleButton-root,
+  .css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50% !important;
+    color: white !important;
+    opacity: 0.9;
+    &:first-child {
+      background-color: orangered !important;
+    }
+    &:nth-child(2) {
+      background-color: green !important;
+    }
+    &:nth-child(3) {
+      background-color: blue !important;
+    }
+    &:nth-child(4) {
+      background-color: red !important;
+    }
+  }
+}
+
+/// price toggle btns
+.memo-toggle-groups {
+  .css-ueukts-MuiButtonBase-root-MuiToggleButton-root,
+  .css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
+    font-size: 1.8rem !important;
+    font-weight: 600;
+  }
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &-specs {
+    width: 35%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+
+    h5:nth-child(even) {
+      color: #999;
+    }
+  }
+}
+@import "ImgSlider.scss";
+@import "review";
+@import "reviewcard";

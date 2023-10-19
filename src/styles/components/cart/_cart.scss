@@ -1,0 +1,22 @@
+.cart {
+  padding-top: 12.6rem;
+  @include section-header-layout;
+
+  &-body {
+    display: flex;
+    gap: 12rem;
+    align-items: flex-start;
+    @media (max-width: 1250px) {
+      gap: 6rem;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &-link {
+    @include link;
+  }
+}
+
+@import "carttable";
+@import "card";

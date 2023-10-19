@@ -1,0 +1,123 @@
+.navbar-container {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  margin: 0 auto;
+  @include primary-bg;
+
+  .css-i4bv87-MuiSvgIcon-root {
+    font-size: 2.8rem !important;
+    color: #333;
+  }
+}
+//badge
+.css-jcn4dz-MuiBadge-badge {
+  background-color: rgb(217, 1, 1) !important;
+  font-size: 1.2rem !important;
+}
+
+.scrolled {
+  backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Adjust the background color and opacity as needed */
+  @include shadow;
+
+  @media (max-width: 1100px) {
+    background-color: white;
+  }
+}
+
+.navbar {
+  width: 120rem;
+  margin: 0 auto;
+  z-index: 100;
+  padding: 2rem 0;
+  transition: 0.3s ease-in-out;
+
+  @include flex-center-center;
+  justify-content: space-between;
+
+  @media (max-width: 1250px) {
+    width: auto;
+    padding: 1.3rem 2rem;
+  }
+}
+
+.nav-links {
+  z-index: 100;
+  transition: all 0.4s;
+
+  @media (max-width: 900px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    background-color: white;
+    @include shadow;
+  }
+}
+
+.bg-blur {
+  @media (max-width: 900px) {
+    position: fixed;
+    -webkit-box-align: center;
+    inset: 0px;
+    -webkit-tap-highlight-color: transparent;
+    background-color: rgba(15, 15, 15, 0.696);
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(2px);
+  }
+}
+
+.nav-link {
+  @include link;
+  text-align: center;
+}
+
+.hidden {
+  right: -100%;
+}
+
+.navbar-link {
+  @include link;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.nav-icons {
+  @include flex-center-center;
+  gap: 2rem;
+  z-index: 200;
+}
+
+.navbar-btn {
+  @include btn-primary;
+}
+
+.navbar-sidelinks-icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.side-nav-icon {
+  z-index: 200;
+  display: none !important;
+
+  @media (max-width: 900px) {
+    display: inline-block !important;
+  }
+}

@@ -1,0 +1,50 @@
+.cart-card {
+  border: 1px solid $color-gray;
+  padding: 4rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: 1250px) {
+    width: 100%;
+    border: none;
+
+    h5 {
+      text-align: left;
+    }
+  }
+
+  &-summary {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+    row-gap: 1.6rem;
+  }
+
+  &-input-cell {
+    display: flex;
+    background-color: $color-gray-light;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem 0;
+
+    input {
+      padding: 5px 1rem;
+      width: 100%;
+      background-color: $color-gray-light;
+    }
+  }
+
+  &-total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    margin-top: 2rem;
+    @include btn-primary;
+    text-align: center;
+    font-size: 2.2rem;
+  }
+}

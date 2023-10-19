@@ -1,0 +1,53 @@
+.imgslider {
+  width: 60rem;
+  height: 100%;
+
+  @media (max-width: 1250px) {
+    width: 50%;
+  }
+
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+
+  &-img {
+    width: 100%;
+    margin: 0 auto;
+    background-color: $color-gray-light;
+    border-radius: 2rem;
+
+    @media (max-width: 1250px) {
+      width: 70%;
+    }
+  }
+
+  .img-link {
+    width: 100%;
+  }
+
+  .slick-dots,
+  .slick-thumb {
+    margin-top: 3rem;
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .slick-active {
+      border-radius: 1rem;
+      border: 3px solid red;
+      width: 7rem;
+      height: 7rem;
+    }
+
+    li {
+      width: 5rem;
+    }
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    display: none;
+  }
+}

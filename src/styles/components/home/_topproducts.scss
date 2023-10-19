@@ -1,0 +1,129 @@
+.topproducts {
+  @include section-header-layout;
+
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-card {
+    border-radius: 2rem;
+    padding: 2rem;
+    border: 1px solid $color-gray-light;
+    transition: all 0.4s;
+
+    &:hover {
+      background-color: $color-gray-light;
+    }
+    h5 {
+      margin: 1.6rem 0;
+    }
+    img {
+      width: 100%;
+      padding: 8px;
+      border-radius: 2rem;
+      background-color: $color-gray-light;
+    }
+  }
+}
+
+.topproducts-cards-lower {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.topproducts-card-xl {
+  @include flex-center-center;
+  flex-direction: column;
+  gap: 6rem;
+  width: 60rem;
+  border-radius: 2rem;
+  background-color: $color-gray-light;
+  padding: 3rem;
+
+  @media (max-width: 1300px) {
+    width: 100%;
+    flex-direction: row-reverse;
+    gap: 2rem;
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1300px) {
+      flex-direction: column;
+    }
+
+    h4 {
+      margin: 3rem 0;
+
+      &:nth-child(2) {
+        color: #777;
+      }
+    }
+  }
+
+  &-link {
+    @include link;
+  }
+  img {
+    width: 100%;
+
+    @media (max-width: 1300px) {
+      width: 50%;
+    }
+  }
+}
+
+.topproducts-card-l {
+  width: 100%;
+  background-color: $color-gray-light;
+  border-radius: 2rem;
+  padding: 2rem 6rem 6rem 6rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  height: 48.5%;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    &-link {
+      @include link;
+    }
+
+    h5 {
+      margin-bottom: 1rem;
+
+      &:nth-child(2) {
+        margin: 0;
+        color: #777;
+      }
+    }
+  }
+  img {
+    width: 50%;
+  }
+}

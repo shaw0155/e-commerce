@@ -1,0 +1,15 @@
+.account-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  .pass-section {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.personalinfo {
+  &-btn {
+    @include btn-primary;
+    padding: 2rem 1rem;
+  }
+}

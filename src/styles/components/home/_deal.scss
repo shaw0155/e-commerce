@@ -1,0 +1,55 @@
+.home-deal {
+  @include section-header-layout;
+
+  &-content {
+    @include flex-center-center;
+    gap: 2rem;
+  }
+}
+.home-deal-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.home-deal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid $color-gray-light;
+  border-radius: 2rem;
+  transition: all 0.4s;
+  text-align: center;
+
+  &:hover {
+    background-color: $color-gray-light;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    p {
+      color: #888;
+    }
+  }
+
+  img {
+    width: 12rem;
+    padding: 1rem 5px;
+    background-color: $color-gray-light;
+    border-radius: 2rem;
+  }
+}

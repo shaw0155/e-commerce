@@ -1,0 +1,34 @@
+.cart-carttable {
+  width: 100%;
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    img {
+      width: 10rem;
+    }
+    h5 {
+      margin-bottom: 5px;
+    }
+    h6 {
+      color: #777;
+      font-weight: 600;
+    }
+  }
+  //width of select
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    width: 8rem !important;
+  }
+
+  //size of delete icon
+  .css-i4bv87-MuiSvgIcon-root {
+    height: 3rem !important;
+    width: 3rem !important;
+  }
+
+  //remove shadow from table
+  .css-1fw5qro-MuiPaper-root {
+    box-shadow: none !important;
+  }
+}

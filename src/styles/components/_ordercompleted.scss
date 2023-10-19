@@ -1,0 +1,14 @@
+.oredercompleted {
+  padding-top: 18rem;
+  width: 100%;
+  @include section-header-layout-center;
+  justify-content: center;
+
+  &-icon {
+    font-size: 12.8rem;
+  }
+
+  &-link {
+    @include btn-primary;
+  }
+}

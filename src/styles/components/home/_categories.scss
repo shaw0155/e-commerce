@@ -1,0 +1,39 @@
+.home-cats {
+  @include section-header-layout;
+
+  &-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 1250px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-card {
+    @include flex-center-center;
+    flex-direction: column;
+    gap: 2rem;
+    border: 1px solid $color-gray;
+    padding: 3rem 0;
+    border-radius: 1rem;
+
+    &:hover {
+      border-color: #333;
+    }
+
+    img {
+      padding: 2rem;
+      background-color: $color-gray-light;
+      border-radius: 50%;
+    }
+  }
+}

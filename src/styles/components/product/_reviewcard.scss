@@ -1,0 +1,28 @@
+.product-reviewcard {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+  img {
+    border-radius: 50%;
+    width: 10rem;
+  }
+
+  h6 {
+    font-size: 1.4rem;
+    color: $color-gray;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.product-reviewlist {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

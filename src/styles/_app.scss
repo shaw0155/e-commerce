@@ -1,0 +1,177 @@
+$color-gray-bg: #f4f6f8;
+$color-text-header: #333;
+$color-text-p: #555;
+$color-primary: #fa541c;
+$color-primary-dark: #ea4108;
+$color-secondary: #754ffd;
+$color-gray: #dcdcdc;
+$color-gray-light: #f6f7f8;
+
+span {
+  color: $color-primary;
+}
+
+h1 {
+  font-size: 6rem;
+  color: $color-text-header;
+}
+
+h2 {
+  font-size: 5rem;
+  text-transform: capitalize;
+  color: $color-text-header;
+}
+h3 {
+  text-transform: capitalize;
+  color: $color-text-header;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 2.2rem;
+  color: $color-text-header;
+  color: #333;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $color-text-header;
+}
+
+h6 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $color-text-header;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  color: $color-text-p;
+}
+
+.hashtag {
+  display: inline-block;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+hr {
+  height: 0.5px;
+  border-color: #fff;
+}
+
+@mixin shadow {
+  box-shadow: rgba(145, 158, 171, 0.24) -24px 24px 72px -8px;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin hidden {
+  display: none;
+}
+
+@mixin show {
+  display: block;
+}
+
+@mixin primary-bg {
+  background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      )
+      center center / cover no-repeat,
+    url("../imgs/main/overlay_1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  color: #333;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+@mixin btn-primary {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+@mixin btn-secondary {
+  @include btn-primary;
+  background-color: $color-primary;
+  border: 1px solid $color-primary;
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: white;
+  }
+}
+
+@mixin section-header-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+
+  @media (max-width: 1000px) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@mixin section-header-layout-center {
+  @include section-header-layout;
+  align-items: center;
+  text-align: center;
+}
+
+.App {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+@import "components/navbar";
+@import "components/footer";
+@import "components/home/home";
+@import "components/products/products";
+@import "components/product/product";
+@import "components/cart/cart";
+@import "components/checkout/checkout";
+@import "components/ordercompleted";
+@import "components/wishlist";
+@import "components/account/account";

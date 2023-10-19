@@ -1,0 +1,29 @@
+.products {
+  padding-top: 12.6rem;
+  margin: 0;
+  @include section-header-layout;
+
+  h3 {
+    margin-bottom: 4rem;
+  }
+
+  &-body {
+    display: flex;
+    gap: 6rem;
+
+    @media (max-width: 750px) {
+      flex-direction: column-reverse;
+    }
+
+    &-productlist-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+}
+
+@import "sidenav";
+@import "productcardhorizontal";
+@import "productlist";

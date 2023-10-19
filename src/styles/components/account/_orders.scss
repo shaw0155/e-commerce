@@ -1,0 +1,52 @@
+.account-orders {
+  @include section-header-layout;
+
+  .css-kzyyzb-MuiDataGrid-root {
+    //table padding
+    padding: 1rem 2rem;
+  }
+
+  //header font
+  .css-t89xny-MuiDataGrid-columnHeaderTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  //items font
+  .css-kzyyzb-MuiDataGrid-root .MuiDataGrid-cellContent {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .status {
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    &-gray {
+      text-align: center;
+      background-color: $color-gray;
+    }
+
+    &-red {
+      color: rgb(165, 0, 0);
+      background-color: rgba(255, 0, 0, 0.277);
+    }
+
+    &-green {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.347);
+    }
+
+    &-orange {
+      color: orange;
+      background-color: rgba(255, 166, 0, 0.226);
+    }
+  }
+
+  //remove shadow
+  .css-c6pyks-MuiPaper-root-MuiTableContainer-root {
+    box-shadow: none;
+  }
+}
