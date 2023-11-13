@@ -7,7 +7,7 @@ import AccountOrders from "../components/account/AccountOrders";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-  console.log("index" + index, "value" + value);
+  // console.log("index" + index, "value" + value);
   return (
     <div
       role="tabpanel"
@@ -42,7 +42,11 @@ export default function Account() {
       <div className="account-body">
         <AccountCard onTabChange={onTabChange} />
         {tabPanels.map((panel) => (
-          <TabPanel value={value} index={tabPanels.indexOf(panel)}>
+          <TabPanel
+            key={tabPanels.indexOf(panel)}
+            value={value}
+            index={tabPanels.indexOf(panel)}
+          >
             {panel}
           </TabPanel>
         ))}

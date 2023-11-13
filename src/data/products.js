@@ -16,7 +16,7 @@ import product14 from "../imgs/products/product_14.png";
 const products = [
   {
     category: "Electronics",
-    tiltle: "Apple Watch",
+    tiltle: "Apple Watch max",
     priceBefore: 97.14,
     priceAfter: 83.74,
     rate: 4,

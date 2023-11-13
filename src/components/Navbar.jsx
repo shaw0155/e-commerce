@@ -1,5 +1,6 @@
 import logo from "../imgs/main/logo.png";
 import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -7,19 +8,47 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import Badge from "@mui/material/Badge";
+import { getCart } from "../actions/cart_actions";
+import { getWishlist } from "../actions/wishlist_actions";
 
 const items = [
   { title: " home", link: "/home", key: 1 },
   { title: " products", link: "/products", key: 2 },
-  { title: " product", link: "/product", key: 3 },
-  { title: " order completed", link: "/order-completed", key: 4 },
   { title: " about", link: "/", key: 5 },
   { title: " contact", link: "/", key: 6 },
 ];
 
+const accessToken = localStorage.getItem("userToken");
+
 export default function Navbar() {
+  const { data: cartData } = useQuery({
+    queryKey: ["cartTable"],
+    queryFn: getCart,
+  });
+  const cartProducts = cartData?.data.data.products;
+
+  const { data: wishlistData } = useQuery({
+    queryKey: ["wishTable"],
+    queryFn: getWishlist,
+  });
+  const wishlistProducts = wishlistData?.data.data;
+
   const [show, setShow] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [cartCount, setCartCount] = useState();
+  const [wishlistCount, setWishlistCount] = useState();
+
+  useEffect(() => {
+    setWishlistCount(wishlistProducts?.length);
+
+    if (!cartProducts && localStorage.getItem("userToken")) {
+      setCartCount(0);
+    } else if (!localStorage.getItem("userToken")) {
+      return;
+    } else {
+      setCartCount(cartProducts?.length);
+    }
+  }, [wishlistProducts, cartProducts]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,21 +90,23 @@ export default function Navbar() {
         </div>
 
         <div className="nav-icons">
-          <Badge badgeContent={2} color="secondary">
-            <Link to="/wishlist">
+          <Badge badgeContent={wishlistCount} color="secondary">
+            <Link to={accessToken ? "/wishlist" : "/login"}>
               <FavoriteBorderOutlinedIcon className="navbar-sidelinks-icon" />
             </Link>
           </Badge>
-          <Badge badgeContent={4} color="secondary">
-            <Link to="/cart">
+          <Badge badgeContent={cartCount} color="secondary">
+            <Link to={accessToken ? "/cart" : "/login"}>
               <ShoppingCartOutlinedIcon className="navbar-sidelinks-icon" />
             </Link>
           </Badge>
-          <Link to="/account">
+          <Link to={accessToken ? "/account" : "/login"}>
             <PersonOutlineOutlinedIcon className="navbar-sidelinks-icon" />
           </Link>
 
-          <button className="navbar-btn"> buy now</button>
+          <Link to="/products" className="navbar-btn">
+            buy now
+          </Link>
           {show ? (
             <CloseIcon
               className="side-nav-icon navbar-sidelinks-icon"

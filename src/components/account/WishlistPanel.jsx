@@ -1,9 +1,8 @@
-import CartTable from "../../components/cart/CartTable";
-
+import WishTable from "../wishlist/WishTable";
 export default function WishlistPanel() {
   return (
     <div className="account-wishlist">
-      <CartTable />
+      <WishTable />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import ReviewCard from "./Reviewcard";
 import reviews from "../../data/reviews";
-import MyPagination from "../../utils/MyPagination";
 export default function ReviewList() {
   return (
     <div className="product-reviewlist">
@@ -15,7 +14,6 @@ export default function ReviewList() {
           <hr />
         </div>
       ))}
-      <MyPagination />
     </div>
   );
 }

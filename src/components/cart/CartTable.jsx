@@ -10,12 +10,9 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import cart from "../../data/cart";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
-import { useState } from "react";
 
 const nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
 const columns = [
   { id: "item", label: "Item", minWidth: 400 },
   { id: "qty", label: "Qty", minWidth: 100 },
@@ -32,20 +29,13 @@ const columns = [
   },
 ];
 
-export default function CartTable() {
-  const [itemNo, setItemNo] = useState(1);
-  const [data, setData] = useState([...cart]);
-
+export default function CartTable(props) {
   const handleItemNoChange = (event) => {
-    if (event.target.value !== null) {
-      setItemNo(event.target.value);
-    }
+    props.handleItemNoChange(event);
   };
 
   const handleRemoveRow = (id) => {
-    // Filter out the row with the provided id to remove it
-    const updatedData = data.filter((row) => row.id !== id);
-    setData(updatedData);
+    props.handleRemoveRow(id);
   };
 
   return (
@@ -67,13 +57,13 @@ export default function CartTable() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data.map((row) => (
-                <TableRow key={row.id}>
+              {props.products?.map((row) => (
+                <TableRow key={row.product._id}>
                   <TableCell>
                     <div className="cart-carttable-item">
-                      <img src={row.img} alt="" />
+                      <img src={row.product.imageCover} alt="" />
                       <div>
-                        <h5>{row.name}</h5>
+                        <h5>{row.product.title}</h5>
                         <h6>Color: Grey Space</h6>
                       </div>
                     </div>
@@ -82,12 +72,18 @@ export default function CartTable() {
                     <Select
                       labelId="qty"
                       id="demo-simple-select"
-                      value={itemNo}
+                      value={props.itemNo}
                       onChange={handleItemNoChange}
                       defaultValue="1"
                     >
                       {nums.map((num) => (
-                        <MenuItem value={`${num}`}>{num}</MenuItem>
+                        <MenuItem
+                          key={num}
+                          defaultValue={row.count}
+                          value={`${num}`}
+                        >
+                          {num}
+                        </MenuItem>
                       ))}
                     </Select>
                   </TableCell>
@@ -97,7 +93,7 @@ export default function CartTable() {
                   <TableCell>
                     <Button
                       color="secondary"
-                      onClick={() => handleRemoveRow(row.id)}
+                      onClick={() => handleRemoveRow(row.product._id)}
                     >
                       <DeleteRoundedIcon />
                     </Button>

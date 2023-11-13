@@ -2,7 +2,6 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useState } from "react";
 import categories from "../../data/categories";
-import products from "../../data/products";
 
 import {
   FormGroup,
@@ -22,11 +21,10 @@ import ProductCardHorizontal from "./ProductCardHorizontal";
 const textFieldStyle = {
   borderBottom: "none", // Remove the bottom border
 };
-const brands = ["Apple", "Samsung", "Xaiomi", "Honor"];
 const Shippings = ["Fast", "Saving", "Free"];
 const ratings = [1, 2, 3, 4];
 
-export default function SideNav() {
+export default function SideNav(props) {
   const [accordionOpen, setAccordionOpen] = useState([
     false,
     false,
@@ -64,14 +62,20 @@ export default function SideNav() {
         </AccordionSummary>
         <AccordionDetails>
           <FormGroup>
-            {brands.map((brand) => (
-              <FormControlLabel
-                key={brand}
-                classes={{ label: "checkbox-label" }}
-                control={<Checkbox />}
-                label={brand}
-              />
-            ))}
+            {props.brandItems &&
+              props.brandItems.map((item) => (
+                <FormControlLabel
+                  key={item._id}
+                  classes={{ label: "checkbox-label" }}
+                  control={
+                    <Checkbox
+                      onChange={props.handleCheckboxChange}
+                      name={item.name}
+                    />
+                  }
+                  label={item.name}
+                />
+              ))}
           </FormGroup>
         </AccordionDetails>
       </Accordion>
@@ -186,17 +190,16 @@ export default function SideNav() {
       <hr />
       <div className="products-sidenav-topproducts">
         <h4>Top Products</h4>
-        {products.slice(3, 6).map((item) => (
+        {props.products?.map((item) => (
           <ProductCardHorizontal
             stylee="horizontal"
-            cat={item.category}
-            img={item.img}
-            key={item.tiltle}
-            title={item.tiltle}
-            soldNo={item.soldNo}
-            priceBefore={item.priceBefore}
-            priceAfter={item.priceAfter}
-            rate={item.rate}
+            cat={item.category.name}
+            img={item.imageCover}
+            key={item._id}
+            title={item.title}
+            soldNo={item.sold}
+            priceAfter={item.price}
+            rate={item.ratingsAverage}
           />
         ))}
       </div>

@@ -1,6 +1,7 @@
 .product-reviewcard {
   display: flex;
   gap: 2rem;
+  padding: 3rem 0;
 
   @media (max-width: 850px) {
     flex-direction: column;
@@ -24,5 +25,4 @@
 .product-reviewlist {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
 }

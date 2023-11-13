@@ -1,36 +1,37 @@
-import products from "../../data/products";
 import { Link } from "react-router-dom";
 import CountDown from "./CountDown";
 
-export default function Features() {
+export default function Features(props) {
   return (
     <div className="home-features container">
       <h3>featured products</h3>
       <div className="home-features-cards">
         <div className="home-features-cards-lg">
-          {products.slice(2, 4).map((item) => (
+          {props.products.slice(0, 2).map((item) => (
             <Link
-              to="/product"
-              key={item.tiltle}
+              to={`/products/${item._id}`}
+              key={item._id}
               className="home-features-card home-features-card-big"
             >
-              <img src={item.img} alt="" />
-              <h5>{item.tiltle}</h5>
-              <h4>From ${item.priceAfter}</h4>
+              <img src={item.imageCover} alt="" />
+              <h5>{item.title}</h5>
+              <h4>From ${item.price}</h4>
               <CountDown />
             </Link>
           ))}
         </div>
         <div className="home-features-cards-small">
-          {products.slice(4, 8).map((item) => (
+          {props.products.slice(2, 6).map((item) => (
             <Link
-              to="/product"
-              key={item.tiltle}
+              to={`/products/${item._id}`}
+              key={item._id}
               className="home-features-card home-features-card-small"
             >
-              <img src={item.img} alt="" />
-              <h5>{item.tiltle}</h5>
-              <h5>${item.priceAfter}</h5>
+              <img src={item.imageCover} alt="" />
+              <h5>{item.title}</h5>
+              <h5>
+                $ <span>{item.price}</span>
+              </h5>
             </Link>
           ))}
         </div>

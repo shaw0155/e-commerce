@@ -5,10 +5,9 @@ import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import products from "../../data/products";
 import ProductCardHorizontal from "./ProductCardHorizontal";
 
-export default function ProductList() {
+export default function ProductList(props) {
   const [alignment, setAlignment] = useState(true);
   const [sort, setSort] = useState("popular");
 
@@ -56,24 +55,21 @@ export default function ProductList() {
             : "product-productlist-product-cards-grid"
         }
       >
-        {products.map((item) => (
-          <ProductCardHorizontal
-            stylee={alignment ? "horizontal" : "vertical"}
-            key={item.tiltle}
-            cat={item.category}
-            img={item.img}
-            title={item.tiltle}
-            soldNo={item.soldNo}
-            rate={item.rate}
-            priceBefore={item.priceBefore}
-            priceAfter={item.priceAfter}
-            P={
-              alignment
-                ? " Qui sunt deserunt dol. repellat. Voluptates non blanditiis. Error et tenetur iste soluta cupiditate ratione perspiciatis et."
-                : null
-            }
-          />
-        ))}
+        {props.itemsForCurrentPage &&
+          props.itemsForCurrentPage.map((item) => (
+            <ProductCardHorizontal
+              stylee={alignment ? "horizontal" : "vertical"}
+              key={item._id}
+              cat={item.category.name}
+              img={item.imageCover}
+              title={item.title}
+              soldNo={item.sold}
+              rate={item.ratingsAverage}
+              priceAfter={item.price}
+              description={alignment ? item.description : null}
+              link={item._id}
+            />
+          ))}
       </div>
     </div>
   );

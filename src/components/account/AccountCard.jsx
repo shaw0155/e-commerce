@@ -7,7 +7,7 @@ import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function a11yProps(index) {
   return {
@@ -17,6 +17,7 @@ function a11yProps(index) {
 }
 
 export default function AccountCard(props) {
+  const navigate = useNavigate();
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -68,7 +69,14 @@ export default function AccountCard(props) {
         />
       </Tabs>
       <hr />
-      <Link to="" className="account-card-link">
+      <Link
+        onClick={() => {
+          navigate("/home");
+          localStorage.removeItem("userToken");
+          window.location.reload();
+        }}
+        className="account-card-link"
+      >
         <LogoutOutlinedIcon /> Logout
       </Link>
     </div>

@@ -1,6 +1,8 @@
 .imgslider {
-  width: 60rem;
-  height: 100%;
+  width: 50em;
+  background-color: $color-gray-light;
+  padding: 2rem;
+  border-radius: 2rem;
 
   @media (max-width: 1250px) {
     width: 50%;
@@ -27,16 +29,17 @@
 
   .slick-dots,
   .slick-thumb {
-    margin-top: 3rem;
+    margin-top: 2rem;
     position: static;
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    border-radius: 2rem;
+    overflow: hidden;
 
     .slick-active {
       border-radius: 1rem;
-      border: 3px solid red;
       width: 7rem;
       height: 7rem;
     }

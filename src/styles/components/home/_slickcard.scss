@@ -1,13 +1,11 @@
 .home-slickcard {
-  width: 95%;
   margin: 0 auto;
-  @include primary-bg;
   @include flex-center-center;
 
-  padding: 8rem;
-  gap: 4rem;
-  border: 1px solid #eee;
+  padding: 0 8rem;
+  border: 3px solid #eee;
   border-radius: 2rem;
+  @include shadow;
 
   @media (max-width: 850px) {
     flex-direction: column;
@@ -20,7 +18,7 @@
     padding: 1rem;
   }
   img {
-    width: 45%;
+    width: 40%;
 
     @media (max-width: 850px) {
       width: 60%;
@@ -45,7 +43,24 @@
 }
 
 .home-header {
-  padding-top: 12rem;
+  padding-top: 14rem;
+
+  @media (max-width: 850px) {
+    padding-top: 9rem;
+  }
+
+  .slick-slider {
+    width: 90%;
+    margin: 0 auto;
+    @include shadow;
+
+    @media (max-width: 850px) {
+      width: 50rem;
+    }
+    @media (max-width: 500px) {
+      width: 35rem;
+    }
+  }
 
   .slick-dots {
     bottom: 3rem;
