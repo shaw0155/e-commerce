@@ -46,5 +46,6 @@ class AccountAPI {
     return axios(config);
   }
 }
+const accountAPI = new AccountAPI();
 
-export default new AccountAPI();
+export default accountAPI;

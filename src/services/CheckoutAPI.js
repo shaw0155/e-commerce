@@ -28,5 +28,5 @@ class CheckoutAPI {
     return axios(config);
   }
 }
-
-export default new CheckoutAPI();
+const checkoutAPI = new CheckoutAPI();
+export default checkoutAPI;

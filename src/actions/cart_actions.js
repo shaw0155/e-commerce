@@ -1,19 +1,19 @@
-import CartAPI from "../services/CartAPI";
+import cartAPI from "../services/CartAPI";
 
 const token = localStorage.getItem("userToken");
 
 export const addProductToCart = async (productId) => {
   if (!token) return;
-  return await CartAPI.addProductToCart(productId);
+  return await cartAPI.addProductToCart(productId);
 };
 
 export const getCart = async () => {
   if (token) {
-    return await CartAPI.getCart().catch((err) => null);
+    return await cartAPI.getCart().catch((err) => null);
   }
 };
 
 export const deleteProductFromCart = async (productId) => {
   if (!token) return;
-  return await CartAPI.deleteProductFromCart(productId);
+  return await cartAPI.deleteProductFromCart(productId);
 };

@@ -36,4 +36,6 @@ class WishlistAPI {
   }
 }
 
-export default new WishlistAPI();
+const wishlistAPI = new WishlistAPI();
+
+export default wishlistAPI;

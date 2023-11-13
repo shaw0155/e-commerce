@@ -18,7 +18,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LoginCard from "./components/register-loginCard/LoginCard";
 import RegisterCard from "./components/register-loginCard/RegisterCard";
 import RegisterSuccess from "./components/register-loginCard/RegisterSuccess";
-import AllOrders from "./pages/AllOrders";
 
 // stale time : refresh timeout
 const appQuery = new QueryClient({

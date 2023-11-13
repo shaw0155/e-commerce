@@ -1,17 +1,17 @@
-import WishlistAPI from "../services/WishlistAPI";
+import wishlistAPI from "../services/WishlistAPI";
 
 const token = localStorage.getItem("userToken");
 
 export const addProductToWishlist = async (productId) => {
   if (!token) return;
 
-  return await WishlistAPI.addProductToWishlist(productId);
+  return await wishlistAPI.addProductToWishlist(productId);
 };
 
 export const removeProductFromWishlist = async (productId) => {
   if (!token) return;
 
-  return await WishlistAPI.removeProductFromWishlist(productId);
+  return await wishlistAPI.removeProductFromWishlist(productId);
 };
 
 export const getWishlist = async () => {
@@ -19,5 +19,5 @@ export const getWishlist = async () => {
     return;
   }
 
-  return await WishlistAPI.getWishlist();
+  return await wishlistAPI.getWishlist();
 };

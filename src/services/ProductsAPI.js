@@ -39,5 +39,5 @@ class ProductsAPI {
     return axios(config);
   }
 }
-
-export default new ProductsAPI();
+const productsAPI = new ProductsAPI();
+export default productsAPI;

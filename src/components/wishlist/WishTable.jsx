@@ -7,8 +7,6 @@ import {
   TableRow,
   Paper,
   Button,
-  Select,
-  MenuItem,
 } from "@mui/material";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import { useState } from "react";

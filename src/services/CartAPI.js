@@ -36,4 +36,5 @@ class CartAPI {
   }
 }
 
-export default new CartAPI();
+const cartAPI = new CartAPI();
+export default cartAPI;

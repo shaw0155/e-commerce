@@ -22,5 +22,6 @@ class AuthAPI {
     return axios(config);
   }
 }
+const authAPI = new AuthAPI();
 
-export default new AuthAPI();
+export default authAPI;
